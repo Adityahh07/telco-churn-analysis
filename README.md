@@ -62,10 +62,8 @@ Offer a $5/month discount for switching to automatic payment, targeting the 2,36
 telco-churn-analysis/
 │
 ├── data/
-│   ├── raw/
-│   │   └── WA_Fn-UseC_-Telco-Customer-Churn.csv
-│   └── processed/
-│       └── telco_churn_cleaned.csv
+│   ├── WA_Fn-UseC_-Telco-Customer-Churn.csv
+│   └── telco_churn_cleaned.csv
 │
 ├── notebooks/
 │   ├── 01_data_cleaning.ipynb            ← Data Cleaning & Feature Engineering
