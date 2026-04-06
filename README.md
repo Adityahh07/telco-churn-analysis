@@ -179,7 +179,6 @@ Data connected directly from MySQL database.
 | MySQL | Structured query analysis |
 | Power BI Desktop | Executive dashboard |
 | Jupyter Notebook | Development environment |
-| GitHub | Version control and portfolio hosting |
 
 ---
 
