@@ -79,7 +79,7 @@ SELECT
     ) AS pct_revenue_at_risk
 FROM telco_churn;
 
--- Q9. Churn rate by internet service type
+-- Q7. Churn rate by internet service type
 SELECT
     InternetService,
     COUNT(*) AS total_customers,
@@ -91,7 +91,7 @@ FROM telco_churn
 GROUP BY InternetService
 ORDER BY churn_rate_pct DESC;
 
--- Q10. Churn rate by payment method
+-- Q8. Churn rate by payment method
 SELECT
     PaymentMethod,
     COUNT(*) AS total_customers,
@@ -102,7 +102,7 @@ FROM telco_churn
 GROUP BY PaymentMethod
 ORDER BY churn_rate_pct DESC;
 
--- Q11. Add-on services impact on churn
+-- Q9. Add-on services impact on churn
 -- UNION ALL combines OnlineSecurity and TechSupport into one result
 -- Filtered to internet customers only — add-ons require internet
 SELECT
@@ -131,7 +131,7 @@ WHERE InternetService != 'No'
 GROUP BY TechSupport
 ORDER BY addon_service, has_addon DESC;
 
--- Q12. Highest-risk customer segment
+-- Q10. Highest-risk customer segment
 SELECT
     COUNT(*) AS segment_size,
     SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) AS already_churned,
@@ -145,7 +145,7 @@ WHERE Contract        = 'Month-to-month'
   AND PaymentMethod   = 'Electronic check'
   AND tenure         <= 12;
 
--- Q13. High-value customers at risk — uses a subquery
+-- Q11. High-value customers at risk — uses a subquery
 SELECT
     COUNT(*) AS customer_count,
     ROUND(AVG(MonthlyCharges), 2) AS avg_charge_in_segment,
@@ -156,7 +156,7 @@ FROM telco_churn
 WHERE MonthlyCharges > (SELECT AVG(MonthlyCharges) FROM telco_churn)
   AND Contract = 'Month-to-month';
   
--- Q14. Percentage of total churn contributed by each contract type
+-- Q12. Percentage of total churn contributed by each contract type
 SELECT
     Contract,
     SUM(CASE WHEN Churn = 'Yes' THEN 1 ELSE 0 END) AS churned_customers,
