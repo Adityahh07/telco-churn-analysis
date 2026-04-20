@@ -75,11 +75,8 @@ Window functions · subqueries   KPIs · 5 charts · 3 slicers
         │                             │
         └──────────────┬──────────────┘
                        ▼
-           03_ml_modeling.ipynb
+           03_ml_churn_prediction.ipynb
            LR · Random Forest · XGBoost · SMOTE
-                       │
-                       ▼
-           04_model_evaluation.ipynb
            ROC curve · confusion matrix · threshold tuning · revenue impact
 ```
 
@@ -95,8 +92,7 @@ telco-churn-analysis/
 ├── notebooks/
 │   ├── 01_data_cleaning.ipynb
 │   ├── 02_EDA.ipynb
-│   ├── 03_ml_modeling.ipynb
-│   └── 04_model_evaluation.ipynb
+│   └── 04_ml_churn_prediction.ipynb
 ├── sql/
 │   └── telco_churn_queries.sql
 ├── dashboard/
